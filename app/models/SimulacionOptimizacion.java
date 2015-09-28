@@ -71,9 +71,9 @@ public class SimulacionOptimizacion extends Simulacion {
 	 */
 	private void cargarInformacionInicial() throws Exception{
 
-		InputStream archivoDatos1=Moviplus.class.getResourceAsStream("/data/datos.xls");
+		InputStream archivoDatos1=Moviplus.class.getResourceAsStream("/public/datos.xls");
 		Simulacion.cargarPasajeros(archivoDatos1, pasajerosIniciales);
-		InputStream archivoDatos2=Moviplus.class.getResourceAsStream("/data/datos.xls");
+		InputStream archivoDatos2=Moviplus.class.getResourceAsStream("/public/datos.xls");
 		Simulacion.cargarConductores(archivoDatos2, conductoresIniciales);
 	}
 	
