@@ -1,8 +1,6 @@
 package models;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 
 import java.util.ArrayList;
@@ -71,9 +69,9 @@ public class SimulacionOptimizacion extends Simulacion {
 	 * @throws Exception
 	 */
 	private void cargarInformacionInicial() throws Exception{
-		InputStream archivoDatos1=Moviplus.class.getResourceAsStream("./data/datos.xls");
+		InputStream archivoDatos1=Moviplus.class.getResourceAsStream("datos.xls");
 		Simulacion.cargarPasajeros(archivoDatos1, pasajerosIniciales);
-		InputStream archivoDatos2=Moviplus.class.getResourceAsStream("./data/datos.xls");
+		InputStream archivoDatos2=Moviplus.class.getResourceAsStream("datos.xls");
 		Simulacion.cargarConductores(archivoDatos2, conductoresIniciales);
 	}
 	

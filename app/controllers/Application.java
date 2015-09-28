@@ -26,11 +26,11 @@ public class Application extends Controller {
             String min = bindedForm.get("min").trim();
             String max = bindedForm.get("max").trim();
             String num = bindedForm.get("num").trim();
-            double ts = (double)Integer.parseInt(min);
-            double ti = (double)Integer.parseInt(max);
+            double ts = (double)Integer.parseInt(min)*60.0;
+            double ti = (double)Integer.parseInt(max)*60.0;
             double n = (double)Integer.parseInt(num);
             File file=mundo.simulacionMultiple(ts, ti, n);
-            return ok(new File("/tmp/resultados.xls"));
+            return ok(new File("data/resultados.xls"));
         }catch (Exception ee){
             return badRequest();
         }
@@ -41,12 +41,12 @@ public class Application extends Controller {
         DynamicForm bindedForm = form().bindFromRequest();
         System.out.println(bindedForm.get("sen") + "  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         String sen = bindedForm.get("sen").trim();
-        double t=(double)Integer.parseInt(sen);
+        double t=(double)Integer.parseInt(sen)*60.0;
 
 
 
         File file=mundo.simulacionOptimizacion(t, 0);
-        return ok(new File("/tmp/resultados.xls"));
+        return ok(new File("data/resultados.xls"));
     }
 
     public Result vecinosCercanos(){

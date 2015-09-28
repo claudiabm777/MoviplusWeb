@@ -55,15 +55,10 @@ public class Moviplus {
 	 * @param id
 	 */
 	public File simulacionOptimizacion(Double tiempo,int id){
-        File file = new File("/tmp/resultados.xls");
+        File file = new File("data/resultados.xls");
         try {
 
-            String content = "This is the content to write into file";
 
-            FileWriter fw = new FileWriter(file.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            bw.close();
 
             // if file doesnt exists, then create it
             if (!file.exists()) {
@@ -96,7 +91,7 @@ public class Moviplus {
 			JOptionPane.showMessageDialog(null, "Uppss! no se pudo guardar bien tu archivo, vuelve a intentarlo.", "Error", JOptionPane.ERROR_MESSAGE);
 
 		}
-        return new File("/tmp/resultados.xls");
+        return file;
 	}
 	
 	/**
@@ -123,13 +118,9 @@ public class Moviplus {
 	 * @param veces
 	 */
 	public File simulacionMultiple(double superior, double inferior, double veces){
-        File file = new File("/tmp/resultados.xls");
+        File file = new File("data/resultados.xls");
         try{
-            String content = "This is the content to write into file";
-            FileWriter fw = new FileWriter(file.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter(fw);
 
-            bw.close();
 
 
             // if file doesnt exists, then create it
@@ -211,7 +202,7 @@ public class Moviplus {
 		JOptionPane.showMessageDialog(null, "Uppss! no se pudo guardar bien tu archivo, vuelve a intentarlo.", "Error", JOptionPane.ERROR_MESSAGE);
 
 	}
-        return  new File("/tmp/resultados.xls");
+        return  file;
 	}
 	
 }
