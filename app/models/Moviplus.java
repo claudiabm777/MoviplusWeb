@@ -7,7 +7,6 @@ import java.util.Locale;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 import jxl.Cell;
 import jxl.Sheet;
@@ -55,7 +54,7 @@ public class Moviplus {
 	 * @param id
 	 */
 	public File simulacionOptimizacion(Double tiempo,int id){
-        File file = new File("data/resultados.xls");
+        File file = new File("/tmp/resultados.xls");
         try {
 
 
@@ -79,7 +78,6 @@ public class Moviplus {
 
 	    workbook.write();
 	    workbook.close();
-	    JOptionPane.showMessageDialog (null, "Ya se realizó la simulación. \nPor favor consulte los resultados en la ruta que especific�.", "Sus resultados estan listos!", JOptionPane.INFORMATION_MESSAGE);
 
 			} catch (WriteException e1) {
             e1.printStackTrace();
@@ -88,8 +86,7 @@ public class Moviplus {
 
 
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Uppss! no se pudo guardar bien tu archivo, vuelve a intentarlo.", "Error", JOptionPane.ERROR_MESSAGE);
-
+		
 		}
         return file;
 	}
@@ -118,7 +115,7 @@ public class Moviplus {
 	 * @param veces
 	 */
 	public File simulacionMultiple(double superior, double inferior, double veces){
-        File file = new File("data/resultados.xls");
+        File file = new File("/tmp/resultados.xls");
         try{
 
 
@@ -188,7 +185,6 @@ public class Moviplus {
 	    nn.addNumber(excel,2,(simulaciones.size()+7),nivel);
 	    workbook.write();
 	    workbook.close();
-	    JOptionPane.showMessageDialog (null, "Ya se realiz� la simulaci�n. \nPor favor consulte los resultados en la ruta que especific�.", "Sus resultados estan listos!", JOptionPane.INFORMATION_MESSAGE);
 
 		} catch (RowsExceededException e1) {
             e1.printStackTrace();
@@ -199,7 +195,6 @@ public class Moviplus {
 
 
 	} catch (Exception e) {
-		JOptionPane.showMessageDialog(null, "Uppss! no se pudo guardar bien tu archivo, vuelve a intentarlo.", "Error", JOptionPane.ERROR_MESSAGE);
 
 	}
         return  file;

@@ -30,7 +30,7 @@ public class Application extends Controller {
             double ti = (double)Integer.parseInt(max)*60.0;
             double n = (double)Integer.parseInt(num);
             File file=mundo.simulacionMultiple(ts, ti, n);
-            return ok(new File("data/resultados.xls"));
+            return ok(new File("/tmp/resultados.xls"));
         }catch (Exception ee){
             return badRequest();
         }
@@ -46,7 +46,7 @@ public class Application extends Controller {
 
 
         File file=mundo.simulacionOptimizacion(t, 0);
-        return ok(new File("data/resultados.xls"));
+        return ok(new File("/tmp/resultados.xls"));
     }
 
     public Result vecinosCercanos(){

@@ -14,6 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import controllers.routes;
 import jxl.CellView;
 import jxl.Workbook;
 import jxl.WorkbookSettings;
@@ -69,6 +70,7 @@ public class SimulacionOptimizacion extends Simulacion {
 	 * @throws Exception
 	 */
 	private void cargarInformacionInicial() throws Exception{
+
 		InputStream archivoDatos1=Moviplus.class.getResourceAsStream("datos.xls");
 		Simulacion.cargarPasajeros(archivoDatos1, pasajerosIniciales);
 		InputStream archivoDatos2=Moviplus.class.getResourceAsStream("datos.xls");
