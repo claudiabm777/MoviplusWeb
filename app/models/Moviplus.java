@@ -86,7 +86,7 @@ public class Moviplus {
 
 
 		} catch (Exception e) {
-		
+
 		}
         return file;
 	}
@@ -154,7 +154,7 @@ public class Moviplus {
 	    SimulacionOptimizacion nn=new SimulacionOptimizacion(3.3);
 	    nn.createLabel();
 	    
-	    nn.addCaption(excel,1,1,"Simulaci�n");
+	    nn.addCaption(excel,1,1,"Simulación");
 	    nn.addCaption(excel,2,1,"Ventana");
 	    nn.addCaption(excel,3,1,"Tiempo promedio total");
 	    nn.addCaption(excel,4,1,"Nivel Servicio");
@@ -163,19 +163,19 @@ public class Moviplus {
 	    Double tiempo=999999999999.0;
 	    Double nivel=0.0;
 	    for(int i=0;i<simulaciones.size();i++){
-	    	nn.addLabel(excel,1,(i+2),"Simulaci�n"+i);
+	    	nn.addLabel(excel,1,(i+2),"Simulación"+i);
 	    	nn.addNumber(excel,2,(i+2),simulaciones.get(i).ventanaTiempo);
 	    	nn.addNumber(excel,3,(i+2),simulaciones.get(i).tiempoPromedioTotal);
 	    	nn.addNumber(excel,4,(i+2),simulaciones.get(i).nivelServicio);
 	    	if(tiempo>simulaciones.get(i).tiempoPromedioTotal){
 	    		tiempo=simulaciones.get(i).tiempoPromedioTotal;
-	    		nombre="Simulaci�n"+i;
+	    		nombre="Simulación"+i;
 	    		ventana=simulaciones.get(i).ventanaTiempo;
 	    		nivel=simulaciones.get(i).nivelServicio;
 	    	}
 	    }
 	    nn.addCaption(excel,1,(simulaciones.size()+3),"La mejor ventana es:");
-	    nn.addLabel(excel,1,(simulaciones.size()+4),"Simulaci�n");
+	    nn.addLabel(excel,1,(simulaciones.size()+4),"Simulación");
 	    nn.addLabel(excel,2,(simulaciones.size()+4),nombre);
 	    nn.addLabel(excel,1,(simulaciones.size()+5),"Ventana");
 	    nn.addNumber(excel,2,(simulaciones.size()+5),ventana);

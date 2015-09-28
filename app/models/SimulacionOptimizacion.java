@@ -212,7 +212,7 @@ public class SimulacionOptimizacion extends Simulacion {
 				addNumber(excelSheet, 9, (i+2), (double)etapas.get(i).getClientesPerdidos());
 				addNumber(excelSheet, 10, (i+2), etapas.get(i).getTiempoEsperaPromedio());
 				nivelServicio+=(double)etapas.get(i).getClientesPerdidos();
-				addCaption(excelSheet, ((1+i)*2+12),0,"Asignaci�n etapa"+i);
+				addCaption(excelSheet, ((1+i)*2+12),0,"Asignación etapa"+i);
 				//addCaption(excelSheet, ((1+i)*2+13),0," etapa"+i);
 				addCaption(excelSheet, ((1+i)*2+12),1,"Pasajero");
 				addCaption(excelSheet, ((1+i)*2+13),1,"Conductor");
