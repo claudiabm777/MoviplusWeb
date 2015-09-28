@@ -1,0 +1,231 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Moviplus</title>
+    <link href="@routes.Assets.versioned("css/bootstrap.css")" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="@routes.Assets.versioned("js/jquery-1.11.0.min.js")"></script>
+    <link href="@routes.Assets.versioned("css/style.css")" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Google Fonts --->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- Google Fonts --->
+    <script type="text/javascript" src="@routes.Assets.versioned("js/jquery.mixitup.min.js")"></script>
+    <script type="text/javascript">
+	$(function () {
+
+		var filterList = {
+
+			init: function () {
+
+				$('#portfoliolist').mixitup({
+					targetSelector: '.portfolio',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+					onMixEnd: filterList.hoverEffect()
+				});
+
+			},
+
+			hoverEffect: function () {
+
+				$('#portfoliolist .portfolio').hover(
+					function () {
+						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+					},
+					function () {
+						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+					}
+				);
+
+			}
+
+		};
+
+		// Run the show!
+		filterList.init();
+
+
+	});
+	</script>
+    <script type="text/javascript" src="@routes.Assets.versioned("js/easing.js")"></script>
+    <script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+</script>
+</head>
+<body>
+<!--- Header Starts Here ---->
+<div class="header" id="home">
+    <div class="container">
+        <div class="logos">
+            <a href="@routes.Application.index()"><img src="@routes.Assets.versioned("images/logo.png")" alt=""></a>
+        </div>
+        <!--- banner Slider starts Here --->
+        <script src="@routes.Assets.versioned("js/responsiveslides.min.js")"></script>
+        <script>
+					    $(function () {
+
+					      $("#slider4").responsiveSlides({
+					        auto: true,
+					        pager: true,
+					        nav: true,
+					        speed: 500,
+					        namespace: "callbacks",
+					        before: function () {
+					          $('.events').append("<li>before event fired.</li>");
+					        },
+					        after: function () {
+					          $('.events').append("<li>after event fired.</li>");
+					        }
+					      });
+
+					    });
+					  </script>
+        <!----//End-slider-script---->
+        <!-- Slideshow 4 -->
+        <div  id="top" class="callbacks_container">
+            <ul class="rslides" id="slider4">
+                <li>
+                    <div class="slide-content">
+                        <h2>Bienvenido a MoviplusSimulator!</h2>
+                        <p>Podrás realizar las simulaciones que desees<br> para conocer el desempeño de esta nueva política.</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-content">
+                        <h2>Están disponibles simulaciones de la nueva política</h2>
+                        <p>tanto individuales<br> como múltiples.</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-content">
+                        <h2>También podras conocer</h2>
+                        <p>el desempeño de la política anterior<br> ¡Adelante!</p>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--- Header Ends Here ---->
+<!-- Navigation Starts Here ---->
+<!-- top-nav -->
+
+<div class="top-nav">
+    <nav>
+        <span class="menu"></span>
+        <ul>
+
+            <li class="active"><a href="@routes.Application.index()" class="scroll">Home</a></li>
+
+            <div class="clearfix"> </div>
+        </ul>
+    </nav>
+</div>
+<script>
+					$( "span.menu" ).click(function() {
+					  $( ".top-nav ul" ).slideToggle( "slow", function() {
+					    // Animation complete.
+					  });
+					});
+				</script>
+
+<script src="@routes.Assets.versioned("js/myscript.js")"> </script>
+
+<!--- About Us Starts Here ---->
+	<div class="about" id="about">
+		<div class="container">
+
+
+			<!--- Testimonial Starts here --->
+			<div class="testimonial">
+					<h3 class="top-title">Resultados</h3>
+					<h4>de la simulación de vecinos más cercanos</h4>
+					<script>
+
+					    $(function () {
+					      // Slideshow 4
+					      $("#slider2").responsiveSlides({
+					        auto: true,
+					        pager: true,
+					        nav: true,
+					        speed: 500,
+					        namespace: "callbacks",
+					        before: function () {
+					          $('.events').append("<li>before event fired.</li>");
+					        },
+					        after: function () {
+					          $('.events').append("<li>after event fired.</li>");
+					        }
+					      });
+
+					    });
+					  </script>
+<div  id="top" class="callbacks_container">
+    <ul class="rslides" id="slider2">
+        <li>
+            <div class="testimonial-slide">
+                <blockquote class="style1">
+                    <span>El tiempo de espera promedio de los clientes fue de 846.88 segundos.</span>
+                </blockquote>
+                <h5></h5>
+            </div>
+        </li>
+        <li>
+            <div class="testimonial-slide">
+                <blockquote class="style1">
+                    <span> El número de clientes que se perdieron fue 103. </span>
+                </blockquote>
+                <h5></h5>
+            </div>
+        </li>
+        <li>
+            <div class="testimonial-slide">
+                <blockquote class="style1">
+                    <span>El nivel de servicio fue de 67.5%</span>
+                </blockquote>
+                <h5></h5>
+            </div>
+        </li>
+    </ul>
+</div>
+</div>
+<!--- Testimonial Ends here --->
+</div>
+</div>
+<!--- About Us Ends Here ---->
+<div class="feature" id="work">
+    <div class="container">
+        <h3 class="top-title"></h3>
+     </div>
+</div>
+<!--- Footer Starts here -->
+<div class="footer">
+
+    <p class="copyright">
+        2015-20 | Un trabajo de  <a >Claudia, Juliana y Felipe</a>
+    </p>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</div>
+<!--- Footer Ends here --->
+</body>
+</html>
