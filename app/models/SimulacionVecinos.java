@@ -66,8 +66,8 @@ public class SimulacionVecinos {
 	 * @throws Exception
 	 */
 	private void cargarInformacionInicial() throws Exception{
-		InputStream archivoDatos1=Moviplus.class.getResourceAsStream("./data/datos.xls");
-		InputStream archivoDatos2=Moviplus.class.getResourceAsStream("./data/datos.xls");
+		InputStream archivoDatos1=Moviplus.class.getResourceAsStream("/data/datos.xls");
+		InputStream archivoDatos2=Moviplus.class.getResourceAsStream("/data/datos.xls");
 		Simulacion.cargarPasajeros(archivoDatos1, pasajerosIniciales);
 		Simulacion.cargarConductores(archivoDatos2, conductoresIniciales);
 	}
