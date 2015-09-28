@@ -1,7 +1,322 @@
-@(message: String)
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Moviplus</title>
+    <link href="@routes.Assets.versioned("css/bootstrap.css")" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="@routes.Assets.versioned("js/jquery-1.11.0.min.js")"></script>
+    <link href="@routes.Assets.versioned("css/style.css")" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Google Fonts --->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- Google Fonts --->
+    <script type="text/javascript" src="@routes.Assets.versioned("js/jquery.mixitup.min.js")"></script>
+    <script type="text/javascript">
+	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
 
-@main("Welcome to Play") {
+				$('#portfoliolist').mixitup({
+					targetSelector: '.portfolio',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+					onMixEnd: filterList.hoverEffect()
+				});				
+			
+			},
+			
+			hoverEffect: function () {
 
-    @play20.welcome(message, style = "Java")
+				$('#portfoliolist .portfolio').hover(
+					function () {
+						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+					},
+					function () {
+						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+					}		
+				);				
+			
+			}
 
-}
+		};
+		
+		// Run the show!
+		filterList.init();
+		
+		
+	});	
+	</script>
+    <script type="text/javascript" src="@routes.Assets.versioned("js/easing.js")"></script>
+    <script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+</script>
+</head>
+<body>
+<!--- Header Starts Here ---->
+<div class="header" id="home">
+    <div class="container">
+        <div class="logos">
+            <a href="index.html"><img src="@routes.Assets.versioned("images/logo.png")" alt=""></a>
+        </div>
+        <!--- banner Slider starts Here --->
+        <script src="@routes.Assets.versioned("js/responsiveslides.min.js")"></script>
+        <script>
+					    $(function () {
+
+					      $("#slider4").responsiveSlides({
+					        auto: true,
+					        pager: true,
+					        nav: true,
+					        speed: 500,
+					        namespace: "callbacks",
+					        before: function () {
+					          $('.events').append("<li>before event fired.</li>");
+					        },
+					        after: function () {
+					          $('.events').append("<li>after event fired.</li>");
+					        }
+					      });
+					
+					    });
+					  </script>
+        <!----//End-slider-script---->
+        <!-- Slideshow 4 -->
+        <div  id="top" class="callbacks_container">
+            <ul class="rslides" id="slider4">
+                <li>
+                    <div class="slide-content">
+                        <h2>Bienvenido a MoviplusSimulator!</h2>
+                        <p>Podrás realizar las simulaciones que desees<br> para conocer el desempeño de esta nueva política.</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-content">
+                        <h2>Están disponibles simulaciones de la nueva política</h2>
+                        <p>tanto individuales<br> como múltiples.</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-content">
+                        <h2>También podras conocer</h2>
+                        <p>el desempeño de la política anterior<br> ¡Adelante!</p>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--- Header Ends Here ---->
+<!-- Navigation Starts Here ---->
+<!-- top-nav -->
+
+<div class="top-nav">
+    <nav>
+        <span class="menu"></span>
+        <ul>
+            <li><a href="#about" class="scroll">Simulaciones</a></li>
+            <li class="active"><a href="#home" class="scroll">Home</a></li>
+            <li><a href="#work" class="scroll">Equipo</a></li>
+            <li><a href="#services" class="scroll">Nuestra iniciativa</a></li>
+            <div class="clearfix"> </div>
+        </ul>
+    </nav>
+</div>
+<script>
+					$( "span.menu" ).click(function() {
+					  $( ".top-nav ul" ).slideToggle( "slow", function() {
+					    // Animation complete.
+					  });
+					});
+				</script>
+
+<script src="@routes.Assets.versioned("js/myscript.js")"> </script>
+<!-- top-nav -->
+<!--- Navigarion Ends Here --->
+<!--- About Us Starts Here ---->
+<div class="about" id="about">
+    <div class="container">
+        <h3 class="top-title">Simulaciones</h3>
+        <h4>¿Cómo empezar?</h4>
+        <p> En este espacio podras encontrar las diferentes opciones para realizar las simulaciones.</p>
+        <p class="show-not">Podrás elegir entre realizar una simulación sencilla, es decir, solo probando una ventana de tiempo o una simulación múltiple, probando al mismo tiempo varias ventanas de tiempo y así poder decidir de manera rápida cual es la mejor.</p>
+        <p>También podras ver los resultados de la política de los vecinos más cercanos.</p>
+
+        <div class="row about-row">
+            <div class="col-md-3 about-row-column">
+                <img src="@routes.Assets.versioned("images/s.png")" alt=""/>
+            </div>
+            <div class="col-md-9 about-column">
+                <h3>Simulación sencilla</h3>
+                <h4></h4>
+                <p>Ingresa la ventana de tiempo. Debe ser mayor a cero y debe estar en minutos</p>
+                <h5>Skills</h5>
+                <div id="progressbar"><div id="progress" ><div id="pbaranim">11%</div></div></div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="row about-row">
+            <div class="col-md-9 about-column">
+                <h3>Simulación múltiple</h3>
+                <h4></h4>
+                <p>Ingresa los parámetros requeridos para la simulación. Obtendrás de manera rápida resultados para decidir cuál es la mejor ventana de tiempo.</p>
+                <h5>Skills</h5>
+                <div id="progressbar"><div id="progress" ><div id="pbaranim">11%</div></div></div>
+
+            </div>
+            <div class="col-md-3 about-row-column">
+                <img src="@routes.Assets.versioned("images/m.png")" alt=""/>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="row about-row">
+            <div class="col-md-3 about-row-column">
+                <img src="@routes.Assets.versioned("images/v.png")" alt=""/>
+            </div>
+            <div class="col-md-9 about-column">
+                <h3>Simulación vecinos más cercanos</h3>
+                <h4></h4>
+                <p>Podrás obtener el resultado de la simulación de los vecinos más cercanos para que puedas comparar con la nueva alternativa. </p>
+                <h5>Skills</h5>
+                <div id="progressbar"><div id="progress" ><div id="pbaranim">11%</div></div></div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>
+<!--- About Us Ends Here ---->
+<!--- Featured Work Starts Here ---->
+<div class="feature" id="work">
+    <div class="container">
+        <h3 class="top-title">Featured Work</h3>
+        <div class="portfolio">
+
+            <div id="portfoliolist">
+
+                <div class="portfolio logo mix_all" data-cat="logo" style="display: inline-block; opacity: 1;">
+                    <div class="portfolio-wrapper">
+                        <a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+                            <img src="@routes.Assets.versioned("images/cdb.png")" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="@routes.Assets.versioned("images/icon-eye.png")" alt=""/></h2>
+                            <p class="b-animate b-from-right    b-delay03 ">Claudia Daniela Bedoya.<br><span class="m_4">Foto</span></p></div></a>
+                    </div>
+                </div>
+                <div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+                    <div class="portfolio-wrapper">
+                        <a href="#small-dialog7" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+                            <img src="@routes.Assets.versioned("images/fsa.png")" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="@routes.Assets.versioned("images/icon-eye.png")" alt=""/></h2>
+                            <p class="b-animate b-from-right    b-delay03 ">Felipe Solano Abello.<br><span class="m_4">Foto</span></p></div></a>
+                    </div>
+                </div>
+                <div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
+                    <div class="portfolio-wrapper">
+                        <a href="#small-dialog8" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+                            <img src="@routes.Assets.versioned("images/sjo.png")" class="img-hid" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="@routes.Assets.versioned("images/icon-eye.png")" alt=""/></h2>
+                            <p class="b-animate b-from-right    b-delay03 ">Silvia Juliana Otero Parra.<br><span class="m_4">Foto</span></p></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!---pop-up-box---->
+        <script type="text/javascript" src="@routes.Assets.versioned("js/modernizr.custom.min.js")"></script>
+        <link href="@routes.Assets.versioned("css/popuo-box.css")" rel="stylesheet" type="text/css" media="all"/>
+        <script src="@routes.Assets.versioned("js/jquery.magnific-popup.js")" type="text/javascript"></script>
+        <!---//pop-up-box---->
+
+        <div id="small-dialog6" class="mfp-hide">
+            <div class="image-top">
+                <img src="@routes.Assets.versioned("images/cdb.png")" alt=""/>
+                <p>Estudiante de Ingeniería Industrial e Ingeniería de Sistemas y Computación de la Universidad de los Andes. Cursa octavo semestre. Trabaja como asistente del curso Principios de Optimización.</p>
+            </div>
+        </div>
+        <div id="small-dialog7" class="mfp-hide">
+            <div class="image-top">
+                <img src="@routes.Assets.versioned("images/fsa.png")" alt=""/>
+                <p>Ingeniero Industrial de la Universidad de los Andes. Estudiante de mestria en Ingeniería Industrial. Trabaja como asistente del curso Optimización Avanzada</p>
+            </div>
+        </div>
+        <div id="small-dialog8" class="mfp-hide">
+            <div class="image-top">
+                <img src="@routes.Assets.versioned("images/sjo.png")" alt=""/>
+                <p>Estudiante de Ingeniería Industrial de la Universidad de los Andes. Cursa se último semestre de pregrado.</p>
+            </div>
+        </div>
+        <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>
+
+        <!---Services Starts Here ---->
+        <div id="services"class="services">
+            <h3 class="top-title">Nuestra iniciativa</h3>
+            <div class="row services-row">
+                <div class="col-md-4 services-column">
+                    <h4></h4>
+
+                    <p></p>
+                </div>
+                <div class="col-md-4 services-column">
+                    <h4>Desarrollo de esta página</h4>
+                    <i class="icon3"></i>
+                    <p>Con esta página queremos mostrar que con este trabajo podemos solucionar problemas a clientes reales, y ofrecer alternativas prácticas y fáciles para stisfacer sus requerimientos. </p>
+                </div>
+                <div class="col-md-4 services-column">
+                    <h4></h4>
+
+                    <p></p>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!---Services Ends Here ---->
+    </div>
+</div>
+<!--- Featured Work Ends Here ---->
+<!--- Contact-Ends Here --->
+<!--- Footer Starts here -->
+<div class="footer">
+
+    <p class="copyright">
+        2015-20 | Un trabajo de  <a >Claudia, Juliana y Felipe</a>
+    </p>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</div>
+<!--- Footer Ends here --->
+</body>
+</html>
