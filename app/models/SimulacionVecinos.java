@@ -179,6 +179,8 @@ public class SimulacionVecinos {
 			}
 			respuesta=conductorMinimo;
 		}
+
+        
 		return respuesta;
 	}
 	
